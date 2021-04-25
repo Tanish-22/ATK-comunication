@@ -1,0 +1,98 @@
+int IN1a = 8;
+int IN1b = 9;
+int IN2a = 10;
+int IN2b = 11;
+
+char readreadvalueue;
+
+void setup()
+{
+  pinMode(IN1a, OUTPUT);
+  pinMode(IN1b, OUTPUT);
+  pinMode(IN2a, OUTPUT);
+  pinMode(IN2b, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  while (Serial.available() > 0)
+  {
+    readreadvalueue = Serial.read();
+    Serial.println(readreadvalueue);
+  }
+
+  if (readvalue == 'V')
+  {
+    digitalWrite(pin, HIGH);
+  }
+  if (readvalue == 'v')
+  {
+    digitalWrite(pin, LOW);
+  }
+
+  if ( readvalue == 'F') // Forward
+  {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN1b, HIGH);
+    digitalWrite(IN2a, HIGH);
+    digitalWrite(IN2b, LOW);
+  }
+  else if (readvalue == 'B') // Backward
+  {
+    digitalWrite(IN1a, HIGH);
+    digitalWrite(IN1b, LOW);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN2b, HIGH);
+  }
+
+  else if (readvalue == 'L') //Left
+  {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN1b, LOW);
+    digitalWrite(IN2a, HIGH);
+    digitalWrite(IN2b, LOW);
+  }
+  else if (readvalue == 'R') //Right
+  {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN1b, HIGH);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN2b, LOW);
+  }
+  else if (readvalue == 'G') //Forward Left
+  {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN1b, LOW);
+    digitalWrite(IN2a, HIGH);
+    digitalWrite(IN2b, LOW);
+  }
+  else if (readvalue == 'I') //Forward Right
+  {
+    digitalWrite(IN1a, HIGH);
+    digitalWrite(IN1b, LOW);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN2b, LOW);
+  }
+  else if (readvalue == 'J') //Backward Right
+  {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN1b, HIGH);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN2b, LOW);
+  }
+  else if (readvalue == 'H') //Backward Left
+  {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN1b, LOW);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN2b, HIGH);
+  }
+  else if (readvalue == 'S') //Stop
+  {
+    digitalWrite(IN1a, LOW);
+    digitalWrite(IN1b, LOW);
+    digitalWrite(IN2a, LOW);
+    digitalWrite(IN2b, LOW);
+  }
+}
