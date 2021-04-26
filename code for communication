@@ -21,16 +21,7 @@ void loop()
     readreadvalueue = Serial.read();
     Serial.println(readreadvalueue);
   }
-
-  if (readvalue == 'V')
-  {
-    digitalWrite(pin, HIGH);
-  }
-  if (readvalue == 'v')
-  {
-    digitalWrite(pin, LOW);
-  }
-
+  
   if ( readvalue == 'F') // Forward
   {
     digitalWrite(IN1a, LOW);
